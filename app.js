@@ -1,13 +1,6 @@
-  // Initialize Materialize components
-  document.addEventListener("DOMContentLoaded", function () {
-    var elems = document.querySelectorAll(".sidenav");
-    M.Sidenav.init(elems);
-  });
-
-  // Initialize AngularJS app and controller
-  var app = angular.module("dashboardApp", []);
-
-  app.controller("DashboardController", function ($scope) {
+var app = angular.module('myApp', []);
+app.controller('MainCtrl', function($scope) {
+  // Your controller logic here
     $scope.cards = [
       {
         title: "Progress Report",
@@ -59,4 +52,4 @@
         progress: 75,
       },
     ];
-  });
+});

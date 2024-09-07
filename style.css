@@ -1,0 +1,75 @@
+
+body{
+  background-image: url(./Resources/background.jpg);
+    background-size: cover;
+    background-position: fixed;
+    background-repeat: no-repeat;
+}
+/* Sidebar collapsed style */
+.sidenav-custom {
+  width: 60px;
+  overflow: hidden;
+  transition: width 0.3s ease;
+}
+
+/* Sidebar expanded style */
+.sidenav-custom:hover {
+  width: 250px;
+}
+
+/* Icons are always visible */
+.icon-visible {
+  opacity: 1;
+  font-size: 36px; /* Large enough to be prominent */
+  transition: font-size 0.3s ease, opacity 0.3s ease;
+}
+
+.account-icon{
+  display: none;
+}
+
+.sidenav-custom:hover .account-icon {
+  display: block;
+}
+/* Text hidden initially */
+.hidden-text {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* Show text on hover */
+.sidenav-custom:hover .hidden-text {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Card-style hover effect for collection items */
+.card-style {
+  background-color: rgba(240, 227, 212, 0.153);
+
+  
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s ease;
+}
+
+/* Hover effect for cards */
+.card-style:hover {
+  background-color: rgba(240, 227, 212, 0.5);
+  transform: translateY(-2px);
+}
+
+/* Collection text hidden initially */
+.collection-item a .hidden-text {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  display: none;
+}
+
+/* Show text on hover */
+.sidenav-custom:hover .collection-item a .hidden-text {
+  opacity: 1;
+  visibility: visible;
+  display: inline;
+}
