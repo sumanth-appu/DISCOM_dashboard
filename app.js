@@ -1,4 +1,5 @@
-  var app = angular.module('myApp', []);
+
+var app = angular.module('myApp', []);
   app.controller('MainCtrl', function($scope) {
     // Your controller logic here
       $scope.cards = [
@@ -52,7 +53,9 @@
           progress: 75,
         },
         {
-          title:"API-Status",icon:"api",color:"indigo accent-1",
+          title:"API-Status",
+          icon:"api",
+          color:"indigo accent-1",
           link:"#",
           progress: 95,
         }
