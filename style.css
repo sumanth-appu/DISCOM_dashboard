@@ -1,75 +1,74 @@
-
-body{
+body {
   background-image: url(./Resources/background.jpg);
-    background-size: cover;
-    background-position: fixed;
-    background-repeat: no-repeat;
-}
-/* Sidebar collapsed style */
-.sidenav-custom {
-  width: 60px;
-  overflow: hidden;
-  transition: width 0.3s ease;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
-/* Sidebar expanded style */
+
+/* Custom Sidenav */
+.sidenav-custom {
+  width: 70px;
+  transition: width 0.3s;
+  overflow: hidden;
+  white-space: nowrap; /* Prevent text wrapping */
+  position: relative;
+}
+
 .sidenav-custom:hover {
   width: 250px;
 }
 
-/* Icons are always visible */
-.icon-visible {
-  opacity: 1;
-  font-size: 36px; /* Large enough to be prominent */
-  transition: font-size 0.3s ease, opacity 0.3s ease;
-}
-
-.account-icon{
-  display: none;
-}
-
-.sidenav-custom:hover .account-icon {
-  display: block;
-}
-/* Text hidden initially */
-.hidden-text {
+/* Hide text initially */
+.sidenav-custom li a .text {
   opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
+  margin-left: 0;
+  transition: opacity 0.3s, margin-left 0.3s;
 }
 
-/* Show text on hover */
-.sidenav-custom:hover .hidden-text {
+.sidenav-custom:hover li a .text {
   opacity: 1;
-  visibility: visible;
+  margin-left: 10px;
 }
 
-/* Card-style hover effect for collection items */
-.card-style {
-  background-color: rgba(240, 227, 212, 0.153);
-
+/* User info styling */
+.user-view {
+  padding: 10px 0px;
+  margin-left: 30px;
+  text-align: right; /* Align content to the left */
   
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-  transition: all 0.3s ease;
 }
 
-/* Hover effect for cards */
-.card-style:hover {
-  background-color: rgba(240, 227, 212, 0.5);
-  transform: translateY(-2px);
+
+/* Keep username and role in place but hidden initially */
+.user-view .name,
+.user-view .role {
+  opacity: 0; /* Hide text initially */
+  color: white;
+  transition: opacity 0.3s ease-in-out;
+  visibility: hidden; /* Prevent interaction when hidden */
 }
 
-/* Collection text hidden initially */
-.collection-item a .hidden-text {
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
-  display: none;
-}
-
-/* Show text on hover */
-.sidenav-custom:hover .collection-item a .hidden-text {
+/* On hover, show the name and role */
+.sidenav-custom:hover .user-view .name,
+.sidenav-custom:hover .user-view .role {
   opacity: 1;
   visibility: visible;
-  display: inline;
+}
+
+/* Ensure the layout doesn't change */
+.user-view .name, 
+.user-view .role {
+  height: 20px;
+  line-height: 20px;
+  margin-left: 10px; /* Adjust position to align text with icon */
+}
+
+/* Content styling */
+.content {
+  margin-left: 60px;
+}
+
+.sidenav-fixed {
+  position: fixed;
 }
