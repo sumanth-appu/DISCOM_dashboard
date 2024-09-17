@@ -30,7 +30,7 @@
         <h5>SmartEMS v2.37</h5>
       </a>
 
-      <ul class="right nav-wrapper" style="margin-right: 30px">
+      <ul class="right nav-wrapper">
         <li><span class="user-info">user Name</span></li>
         <li>
           <a href="#"><i class="material-icons">settings</i></a>
@@ -47,7 +47,6 @@
   <!--end of top nav-->
 
   <!-- Side Navbar -->
-
   <ul id="slide-out" class="sidenav sidenav-custom sidenav-fixed grey darken-3 ">
     <li class="user">
       <div class="user-view">
@@ -61,13 +60,16 @@
     <li ng-repeat="card in cards" class="hoverable"><a href="#!" class="waves-effect"><i
           class="material-icons white-text circle">{{
           card.icon }}</i><span class="text white-text">{{card.title}}</span></a></li>
+
+
+
+
   </ul>
 
   <!--end of side nav-->
   <br><br>
   <!--main content-->
   <div class="container center-align">
-
     <div class="row">
       <div class="col s12 m6 l4" ng-repeat="card in cards" style="border-radius: 5rem; min-width:20rem  ">
         <div class="card hoverable" style="
@@ -89,14 +91,62 @@
             <div class="progress container">
               <div class="determinate grey lighten-1" style="width: {{card.progress}}%"></div>
             </div>
-            <a href="{{card.link}}">
-              <i class="material-icons right white-text">arrow_forward</i>
+            <a href="{{card.link}}" ng-if="!card.modalTrigger">
+              <i class="material-icons right white-text ">arrow_forward</i>
+            </a>
+  
+            <!-- For API Status card, trigger modal -->
+            <a class="modal-trigger" href="#modal1" ng-click="loadErrors()" ng-if="card.modalTrigger">
+              <i class="material-icons right white-text">error</i> 
             </a>
           </div>
         </div>
       </div>
+
     </div>
     <!--end of the main content-->
+    <!--modal-->
+    <
+
+    <!-- Modal Structure -->
+    <!-- Modal Structure with Tabs -->
+<div id="modal1" class="modal">
+  <div class="modal-content">
+    <h4>API STATUS - Latest 5 Errors by Category</h4>
+
+    <!-- Tab Navigation -->
+    <ul id="tabs-swipe-demo" class="tabs">
+      <li class="tab col s3"><a href="#auth-errors">Auth Timeout Errors</a></li>
+      <li class="tab col s3"><a href="#http-errors">HTTP Errors</a></li>
+      <li class="tab col s3"><a href="#api-errors">API Errors</a></li>
+    </ul>
+
+    <!-- Tab Content -->
+    <div id="auth-errors">
+      
+      <ul id="auth-error-list"></ul>
+    </div>
+
+    <div id="http-errors">
+      
+      <ul id="http-error-list"></ul>
+    </div>
+
+    <div id="api-errors">
+      
+      <ul id="api-error-list"></ul>
+    </div>
+  </div>
+
+  <div class="modal-footer">
+    <a href="#!" class="modal-close waves-effect waves-red btn-flat">Close</a>
+  </div>
+</div>
+
+    
+    
+
+     
 </body>
 <!-- Materialize JS -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
