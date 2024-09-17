@@ -8,7 +8,7 @@ body {
 
 /* Custom Sidenav */
 .sidenav-custom {
-  width: 70px;
+  width: 80px;
   transition: width 0.3s;
   overflow: hidden;
   white-space: nowrap; /* Prevent text wrapping */
@@ -34,8 +34,7 @@ body {
 /* User info styling */
 .user-view {
   padding: 10px 0px;
-  margin-left: 30px;
-  text-align: right; /* Align content to the left */
+  text-align:left; /* Align content to the left */
   
 }
 
@@ -64,9 +63,13 @@ body {
   margin-left: 10px; /* Adjust position to align text with icon */
 }
 
+.sidenav-custom:hover .user{
+  border-bottom: 2px  solid #fff;
+
+}
 /* Content styling */
 .content {
-  margin-left: 60px;
+  margin-left: 20px;
 }
 
 .sidenav-fixed {
