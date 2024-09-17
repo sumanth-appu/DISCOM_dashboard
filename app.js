@@ -53,8 +53,10 @@
         },
         {
           title:"API-Status",icon:"api",color:"indigo accent-1",
-          link:"#",
+          link:"#modal1",
           progress: 95,
         }
       ];
   });
+
+  
