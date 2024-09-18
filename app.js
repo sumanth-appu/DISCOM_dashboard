@@ -58,7 +58,7 @@ app.controller('MainCtrl', function ($scope) {
       icon: "cloud_done",
       color: "green lighten-3",
       link: "#modal1", // Linking to modal
-      progress: 0, // No progress bar
+      progress: 80, // No progress bar
       modalTrigger: true // Custom property to identify modal trigger
     }
   ];
