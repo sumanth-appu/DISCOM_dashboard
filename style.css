@@ -59,7 +59,7 @@ body {
 .user-view .name, 
 .user-view .role {
   height: 20px;
-  line-height: 20px;
+
   margin-left: 10px; /* Adjust position to align text with icon */
 }
 
