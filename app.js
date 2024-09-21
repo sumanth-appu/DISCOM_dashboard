@@ -60,13 +60,38 @@ app.controller('MainCtrl', function ($scope, $http) {
       title: "API Status",
       icon: "cloud_done",
       color: "green lighten-3",
-      progress:80,
-      link: "#modal1",
-      modalTrigger: true
+      link: "#modal1", // Linking to modal
+      progress: 0, // No progress bar
+      modalTrigger: true // Custom property to identify modal trigger
     }
   ];
 
-  // Function to load errors dynamically into the modal
+  // Error categories with dummy data (Replace with dynamic data if needed)
+  $scope.authErrors = [
+    "2024-08-07T09:00:34 - Task timed out after 3.02 seconds",
+    "2024-08-07T08:20:44 - Task timed out after 3.04 seconds",
+    "2024-08-07T08:19:27 - Task timed out after 3.04 seconds",
+    "2024-08-07T07:53:11 - Task timed out after 3.01 seconds",
+    "2024-08-07T07:50:22 - Task timed out after 3.04 seconds"
+  ];
+
+  $scope.httpErrors = [
+    "2024-08-07: 502 Bad Gateway",
+    "2024-08-07: 404 Not Found",
+    "2024-08-07: 502 Bad Gateway",
+    "2024-08-07: 404 Not Found",
+    "2024-08-07: 504 Gateway Timeout"
+  ];
+
+  $scope.apiErrors = [
+    "2024-08-28: Could not resolve host: hespapp.amismartmeters.com",
+    "2024-08-28: Could not resolve host: hespapp.amismartmeters.com",
+    "2024-08-28: Could not resolve host: hespapp.amismartmeters.com",
+    "2024-08-28: Could not resolve host: hespapp.amismartmeters.com",
+    "2024-08-28: Could not resolve host: hespapp.amismartmeters.com"
+  ];
+
+  // Function to load errors into each tab
   $scope.loadErrors = function () {
     $http.get('./error_log.txt').then(function(response) {
       var logContent = response.data;
